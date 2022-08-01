@@ -16,7 +16,7 @@ fi
 sudo yes | ufw reset 
 sudo ufw default deny incoming
 sudo ufw allow ssh
-sudo ufw allow from YOURIPHERE to any port 3000:3015 proto tcp
+sudo ufw allow from YOURSTATICIPHERE to any port 3000:3015 proto tcp
 sudo ufw allow to any port 30303:30311 proto tcp
 ufw --force enable
 ufw reload
@@ -29,7 +29,7 @@ then
     exit 0
 fi
 sudo ufw delete allow ssh
-sudo ufw allow proto tcp from YOURIPHERE to any port 22
+sudo ufw allow proto tcp from YOURSTATICIPHERE to any port 22
 sudo ufw reload
 sudo ufw status numbered
 echo "Done, SSH port is now secured (Script by Lux)"
